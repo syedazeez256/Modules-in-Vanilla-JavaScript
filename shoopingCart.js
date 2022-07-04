@@ -1,5 +1,10 @@
 // Exporting Module
 
+// Blocking Execution
+console.log('Start fetching');
+await fetch('https://jsonplaceholder.typicode.com/posts');
+console.log('Complete fetching');
+
 console.log('Exporting Module');
 
 const orders = [2, 3, 4];
