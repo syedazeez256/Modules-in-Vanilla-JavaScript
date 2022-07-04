@@ -31,19 +31,28 @@ console.log(cart);
 // const lastpost2 = await getLAstPosts();
 // console.log(lastpost2);
 
-const getValues = (function () {
-  const cart = [];
-  const totalPrice = 23;
-  const totalQuantity = 238;
-  const addToCart = (product, quantity) => {
-    cart.push(product, quantity);
-    console.log(`${quantity}, ${product} added to cart`);
-  };
-  const orderCart = (product, quantity) => {
-    cart.push(product, quantity);
-    console.log(`${quantity}, ${product} ordered to cart`);
-  };
-  return { cart, totalPrice, totalQuantity, addToCart };
-})();
-getValues.addToCart('pizza', 3);
-getValues.addToCart('apples', 5);
+// const getValues = (function () {
+//   const cart = [];
+//   const totalPrice = 23;
+//   const totalQuantity = 238;
+//   const addToCart = (product, quantity) => {
+//     cart.push(product, quantity);
+//     console.log(`${quantity}, ${product} added to cart`);
+//   };
+//   const orderCart = (product, quantity) => {
+//     cart.push(product, quantity);
+//     console.log(`${quantity}, ${product} ordered to cart`);
+//   };
+//   return { cart, totalPrice, totalQuantity, addToCart };
+// })();
+// getValues.addToCart('pizza', 3);
+// getValues.addToCart('apples', 5);
+
+// Exporting CommonJS Modules but its not working because its use only in Node.JS
+// export.addToCart = (product, quantity) => {
+//         cart.push(product, quantity);
+//         console.log(`${quantity}, ${product} added to cart`);
+//       };
+
+// Importing
+// import { addToCart } from './shoopingCart.js';
