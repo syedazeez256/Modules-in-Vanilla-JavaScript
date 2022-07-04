@@ -20,13 +20,30 @@ console.log(cart);
 // console.log(data);
 // console.log('Something');
 
-const getLAstPosts = async function () {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data = await res.json();
-  return { title: data.at(-1).title, text: data.at(-1).text };
-};
-// const getreq = getLAstPosts();
-// getreq.then(res => console.log(res));
+// const getLAstPosts = async function () {
+//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   const data = await res.json();
+//   return { title: data.at(-1).title, text: data.at(-1).text };
+// };
+// // const getreq = getLAstPosts();
+// // getreq.then(res => console.log(res));
 
-const lastpost2 = await getLAstPosts();
-console.log(lastpost2);
+// const lastpost2 = await getLAstPosts();
+// console.log(lastpost2);
+
+const getValues = (function () {
+  const cart = [];
+  const totalPrice = 23;
+  const totalQuantity = 238;
+  const addToCart = (product, quantity) => {
+    cart.push(product, quantity);
+    console.log(`${quantity}, ${product} added to cart`);
+  };
+  const orderCart = (product, quantity) => {
+    cart.push(product, quantity);
+    console.log(`${quantity}, ${product} ordered to cart`);
+  };
+  return { cart, totalPrice, totalQuantity, addToCart };
+})();
+getValues.addToCart('pizza', 3);
+getValues.addToCart('apples', 5);
