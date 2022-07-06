@@ -56,3 +56,36 @@ console.log(cart);
 
 // Importing
 // import { addToCart } from './shoopingCart.js';
+
+const state = {
+  cart: [
+    { product: 'bread', quantity: 5 },
+    { product: 'pizza', quantity: 4 },
+  ],
+  user: { loggedIn: true },
+  hello: false,
+};
+
+// deep copy ///////////////
+const starClone1 = JSON.parse(JSON.stringify(state));
+state.user.loggedIn = false;
+console.log(starClone1);
+
+// shallow copy
+const starClone = Object.assign({}, state);
+const newObj = cloneDeep(state);
+
+state.user.loggedIn = false;
+console.log(starClone);
+
+// console.log(state);
+
+console.log(newObj);
+
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+
+import cloneDeep from 'lodash-es';
+
+if (module.hot) {
+  module.hot.accept();
+}
